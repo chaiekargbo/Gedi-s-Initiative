@@ -6,13 +6,17 @@ import {
     Card
 } from '../../Components/Card/Card.js';
 
-
+import img1 from './gedis logo.jpg';
 function homePage() {
+
+    document.getElementById('logo').src = img1;
+
     for (let page of pages) {
         if (page === 'home') continue;
         //get page summary
         const img = undefined;
         const txt = require(`../../Pages/${page}/${page}ENG.txt`);
+        
         const card = Card(page, pageENG[page], txt.default, img);
 
         card.classList.add('lang')

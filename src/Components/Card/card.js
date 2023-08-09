@@ -19,11 +19,8 @@ export function Card(id, title, text, image) {
         <p>${text}</p>
     </div>
     `;
-    card.addEventListener('click', () => open(`${title}.html`, '_self'));
+    card.addEventListener('click', (e) => {
+        window.location.href = `./${id}.html`;
+    });
     return card;
-}
-
-function open(url, target) {
-    //opens a new page
-    window.open(url, target);
 }
