@@ -8,8 +8,6 @@ import {
     Card
 } from '../../Components/Card/Card.js';
 
-import img1 from './home.jpg';
-
 function homePage() {
 
     import('../../Components/Logo/Logo.js').then(module => {
