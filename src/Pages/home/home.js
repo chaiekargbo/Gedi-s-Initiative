@@ -10,6 +10,10 @@ import {
 
 function homePage() {
 
+    if (window.mobileCheck()) {
+        document.getElementById('cardContainer').classList.add('cardContainer-mobile');
+    }
+    
     import('../../Components/Logo/Logo.js').then(module => {
         let logo = module.default();
         document.getElementById('main').prepend(logo);
@@ -19,7 +23,7 @@ function homePage() {
         if (page === 'home') continue;
         //get page summary
         const img = require(`../../Pages/${page}/${page}.jpg`).default;
-        const txt = require(`../../Pages/${page}/${page}ENG.txt`);
+        const txt = require(`../../Pages/${page}/summaryENG.txt`);
         
         const card = Card(page, pageENG[page], txt.default, img);
 
@@ -34,17 +38,17 @@ function homePage() {
 
             if (e.detail.language === 'ENG') {
                 ct.children[0].children[0].innerText = pageENG[page];
-                import(`../../Pages/${page}/${page}ENG.txt`).then(module => {
+                import(`../../Pages/${page}/summaryENG.txt`).then(module => {
                     ct.children[1].innerText = module.default;
                 });
             } else if (e.detail.language === 'PIG') {
                 ct.children[0].children[0].innerText = pagePIG[page];
-                import(`../../Pages/${page}/${page}PIG.txt`).then(module => {
+                import(`../../Pages/${page}/summaryPIG.txt`).then(module => {
                     ct.children[1].innerText = module.default;
                 });
             } else if (e.detail.language === 'TST') {
                 ct.children[0].children[0].innerText = pageTST[page];
-                import(`../../Pages/${page}/${page}TST.txt`).then(module => {
+                import(`../../Pages/${page}/summaryTST.txt`).then(module => {
                     ct.children[1].innerText = module.default;
                 });
             }

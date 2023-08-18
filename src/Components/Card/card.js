@@ -8,10 +8,9 @@ import './Card.css';
 </div> */
 
 export function Card(id, title, text, image) {
-   
     const card = document.createElement('div');
     card.id = id;
-    card.className = 'card';
+    card.className = window.mobileCheck() ? 'card-mobile' : 'card';
     card.style = `background-image: url(${image});`;
     card.innerHTML = `
     <div class="container">

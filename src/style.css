@@ -11,6 +11,7 @@ body {
   font-size: 50px;
   color: rgb(64, 12, 100);
   margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .pageHead {
@@ -28,12 +29,18 @@ body {
 }
 
 article {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
   text-align: center;
   font-size: 20px;
   color: rgb(64, 12, 100);
   margin-top: 50px;
+  /*respect line breaks in origin, and break on word when necessary*/
+  white-space: pre-wrap;
+  word-break: break-word;
 }
-
 .main-img {
   /*center and margin*/
   display: block;
@@ -44,4 +51,32 @@ article {
   /*border*/
   border-radius: 25px;
   border: 5px solid rgb(64, 12, 100);
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: rgb(64, 12, 100);
+  margin-top: 50px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  color: rgb(64, 12, 100);
+  margin-top: 50px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 20px;
+  color: rgb(64, 12, 100);
+  margin-top: 50px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 15px;
+  color: rgb(64, 12, 100);
+  margin-top: 50px;
 }
