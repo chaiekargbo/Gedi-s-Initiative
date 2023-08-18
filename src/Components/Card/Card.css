@@ -5,6 +5,11 @@
     justify-content: space-around;
     margin-top: 100px;
   }
+
+  .cardContainer-mobile {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
   
   .card {
     /* Add shadows to create the "card" effect */
@@ -21,6 +26,25 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .card-mobile {
+    /* Add shadows to create the "card" effect */
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 1s;
+    margin: 10px;
+    aspect-ratio: 1/1;
+    width: auto;
+    height: auto;
+    /*bg is image*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .card-mobile div {
+    font-size: smaller !important;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -51,6 +75,7 @@
     /* limit length of text */
     overflow: hidden;
     max-width: 90%;
+    word-wrap: break-word;
     text-overflow: ellipsis;
     width: fit-content;
     /**/
@@ -71,12 +96,12 @@
 
   @media screen and (max-width: 768px) {
     .card {
-      /* aspect ratio 1:1 */
       max-width: 20%;
-      max-height: 20%;
+      max-height: 10%;
     }
 
     .container p {
       max-height: 100px;
     }
   }
+  

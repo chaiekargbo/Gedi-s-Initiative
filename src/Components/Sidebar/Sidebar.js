@@ -38,7 +38,7 @@ export default function Sidebar(current = undefined) {
     // ${pages.map(page => `<a href="${page}.html">${page}</a>`).join('')}
     // `
 
-    pages.forEach(page => { 
+    pages.forEach(page => {
         const a = document.createElement('a');
         a.className = 'lang';
         a.innerHTML = pageENG[page];
@@ -81,21 +81,31 @@ function SidebarButton() {
         import(`./Menu${e.detail.language}.txt`).then((tx) => {
             sidebarButton.innerHTML = tx.default;
         });
-    });       
+    });
     sidebarButton.innerHTML = `Menu`;
     return sidebarButton;
 }
 
-
 function openNav() {
+    const defWidth = '250px';
+    const fullWidth = '100%';
+
+    const sidebarWidth = window.mobileCheck() ? fullWidth : defWidth;
     document.getElementById("menuBT").style.display = "none";
-    document.getElementById("sidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("sidenav").style.width = sidebarWidth;
+    if (window.mobileCheck()) {
+        document.getElementById("main").style.display = "none";
+    } else {
+        document.getElementById("main").style.marginLeft = sidebarWidth;
+    }
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
     document.getElementById("menuBT").style.display = "block";
     document.getElementById("sidenav").style.width = "0";
+    if (document.getElementById("main").style.display === "none") {
+        document.getElementById("main").style.display = "block";
+    }
     document.getElementById("main").style.marginLeft = "0";
 }
