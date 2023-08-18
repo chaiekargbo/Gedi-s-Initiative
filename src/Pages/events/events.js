@@ -1,4 +1,4 @@
-//import './home.css';
+import './events.css';
 
 import defaultPage from '../../Components/DefaultPage.js';
 
